@@ -6,7 +6,7 @@ steering_offset = 0.25 #not used yet
 import time
 motor = MotorKit()
 steering = ServoKit(channels=16)
-#when you run the program, it will take around 31s to initialize everything
+#when you run the program, it will take around 10s to initialize everything
 
 def TeleOp():
     while 1:
