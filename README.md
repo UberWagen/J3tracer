@@ -20,10 +20,13 @@ $ sudo pip3 install adafruit-circuitpython-motorkit
 $ sudo pip3 install inputs  
 $ sudo pip3 install numpy  
 $ sudo apt-get install libcanberra-gtk-module
+
 $ sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev
 libfreetype6-dev liblcms2-dev libwebp-dev libharfbuzz-dev libfribidi-dev
 tcl8.6-dev tk8.6-dev python-tk
+
 $ pip3 install Pillow
+
 $ sudo apt-get install python3-matplotlib
 
 follow Jetson Hacks tutorial to get the PiOLED package installed https://www.jetsonhacks.com/2019/12/03/adafruit-pioled-on-jetson-nano/
