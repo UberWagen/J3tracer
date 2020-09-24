@@ -5,6 +5,8 @@ Follow JetsonHacks' tutorial to get OSS installed https://www.jetsonhacks.com/20
 
 To get started, first things first, $ sudo apt-get update. You'll also want to install the following packages.  
 
+
+$ sudo apt install python-pip
 $ sudo pip3 install adafruit-blinka  
 $ sudo pip3 install adafruit-circuitpython-servokit  
 $ sudo pip3 install adafruit-circuitpython-busdevice  
