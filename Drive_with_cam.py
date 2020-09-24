@@ -1,8 +1,12 @@
 from adafruit_servokit import ServoKit
 from adafruit_motorkit import MotorKit
 from inputs import get_gamepad
+import nanocamera as nano
+import numpy
 import cv2
 import time
+import threading
+
 throttle_gain = 0.8
 steering_offset = 0.25 #not used yet
 motor = MotorKit()
@@ -34,54 +38,33 @@ def TeleOp():
                 motor.motor3.throttle = -revthrottlevalue
                 print(revthrottlevalue)      
 
-def gstreamer_pipeline(
-    capture_width=1280,
-    capture_height=720,
-    display_width=1280,
-    display_height=720,
-    framerate=20,
-    flip_method=0,
-):
-    return (
-        "nvarguscamerasrc ! "
-        "video/x-raw(memory:NVMM), "
-        "width=(int)%d, height=(int)%d, "
-        "format=(string)NV12, framerate=(fraction)%d/1 ! "
-        "nvvidconv flip-method=%d ! "
-        "video/x-raw, width=(int)%d, height=(int)%d, format=(string)BGRx ! "
-        "videoconvert ! "
-        "video/x-raw, format=(string)BGR ! appsink"
-        % (
-            capture_width,
-            capture_height,
-            framerate,
-            flip_method,
-            display_width,
-            display_height,
-        )
-    )
-
-def show_camera():
-    # To flip the image, modify the flip_method parameter (0 and 2 are the most common)
-    print(gstreamer_pipeline(flip_method=0))
-    cap = cv2.VideoCapture(gstreamer_pipeline(flip_method=0), cv2.CAP_GSTREAMER)
-    if cap.isOpened():
-        window_handle = cv2.namedWindow("CSI Camera", cv2.WINDOW_AUTOSIZE)
-        # Window
-        while cv2.getWindowProperty("CSI Camera", 0) >= 0:
-            ret_val, img = cap.read()
-            cv2.imshow("CSI Camera", img)
-            # This also acts as
-            keyCode = cv2.waitKey(30) & 0xFF
-            # Stop the program on the ESC key
-            if keyCode == 27:
+def cam():
+    # Create the Camera instance
+    camera = nano.Camera(device_id=0,flip=0, width=640, height=480, fps=30)
+    print('CSI Camera ready? - ', camera.isReady())
+    while camera.isReady():
+        try:
+            # read the camera image
+            frame = camera.read()
+            # display the frame
+            cv2.imshow("Video Frame", frame)
+            if cv2.waitKey(25) & 0xFF == ord('q'):
                 break
-        cap.release()
-        cv2.destroyAllWindows()
-    else:
-        print("Unable to open camera")
+        except KeyboardInterrupt:
+            break
+
+    # close the camera instance
+    camera.release()
+
+    # remove camera object
+    del camera
+
+t1 = threading.Thread(target=cam)
+t2 = threading.Thread(target=TeleOp)
 
 if __name__ == "__main__":
-    show_camera()
-    TeleOp()
+    t1.start()
+    t2.start()
+    t1.join()
+    t2.join()
          

@@ -23,6 +23,8 @@
 # Portions copyright (c) JetsonHacks 2019
 
 import time
+import board
+import busio
 import Adafruit_SSD1306   # This is the driver chip for the Adafruit PiOLED
 from PIL import Image
 from PIL import ImageDraw
@@ -30,6 +32,7 @@ from PIL import ImageFont
 
 import subprocess
 
+i2c = busio.I2C(board.SCL, board.SDA)
 
 def get_network_interface_state(interface):
     return subprocess.check_output('cat /sys/class/net/%s/operstate' % interface, shell=True).decode('ascii')[:-1]

@@ -1,7 +1,7 @@
 from adafruit_servokit import ServoKit
 from adafruit_motorkit import MotorKit
 from inputs import get_gamepad
-throttle_gain = 0.8
+throttle_gain = 0.75
 steering_offset = 0.25 #not used yet
 import time
 motor = MotorKit()
