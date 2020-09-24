@@ -7,6 +7,7 @@ To get started, first things first, $ sudo apt-get update. You'll also want to i
 
 
 $ sudo apt install python-pip
+
 $ sudo pip3 install adafruit-blinka  
 $ sudo pip3 install adafruit-circuitpython-servokit  
 $ sudo pip3 install adafruit-circuitpython-busdevice  
