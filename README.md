@@ -18,7 +18,7 @@ Clone this git with<br>
 $ git clone https://github.com/UberWagen/J3tracer
 
 Install dependencies by running:<br>
-python3 setup.py install
+$ python3 setup.py install
 
 If you end up having issues with camera feeds or image processing, it's possible that your Linux config didn't come with a few packages. Run the following if you run into issues with image processing:<br>
 $ sudo apt-get install libcanberra-gtk-module<br>
