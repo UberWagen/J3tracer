@@ -32,7 +32,6 @@ setup(
         "adafruit-circuitpython-ssd1306",
         "inputs",
         "numpy",
-        "libcanberra-gtk-module",
         "nanocamera",
         "Pillow",
         "matplotlib",
