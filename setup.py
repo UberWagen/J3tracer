@@ -35,6 +35,7 @@ setup(
         "nanocamera",
         "Pillow",
         "matplotlib",
+        "opencv-python"
     ],
     include_package_data=True,
     zip_safe=False)
