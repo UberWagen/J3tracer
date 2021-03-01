@@ -35,7 +35,7 @@ setup(
         "libcanberra-gtk-module",
         "nanocamera",
         "Pillow",
-        "matplotlib"
+        "matplotlib",
         "libtiff5-dev",
         "libjpeg8-dev",
         "zlib1g-dev",
