@@ -6,21 +6,22 @@ I wanted to un-hitch the waveshare jetracer from the JetRacer image to be able t
 </p>
 
 
-To get started, first things first: 
-
+To get started, first things first:<br> 
 $ sudo apt-get update. 
 
-You'll also want to install the following packages, if you haven't already.
-$ sudo apt install python-pip
-$ sudo apt install python3-pip
-$ sudo apt install git 
+You'll also want to install the following python packages, if you haven't already.<br>
+$ sudo apt install python-pip<br>
+$ sudo apt install python3-pip<br>
+$ sudo apt install git <br>
  
-Clone this git with 
+Clone this git with<br>
 $ git clone https://github.com/UberWagen/J3tracer
 
+Install dependencies by running:<br>
+python3 setup.py install
 
-If you end up having issues with camera feeds or image processing, it's possible that your Linux config didn't come with a few packages. Run the following if you run into issues with image processing:
-$ sudo apt-get install libcanberra-gtk-module
+If you end up having issues with camera feeds or image processing, it's possible that your Linux config didn't come with a few packages. Run the following if you run into issues with image processing:<br>
+$ sudo apt-get install libcanberra-gtk-module<br>
 $ sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev libharfbuzz-dev libfribidi-dev
 tcl8.6-dev tk8.6-dev python-tk
 
