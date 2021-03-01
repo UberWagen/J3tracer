@@ -18,7 +18,7 @@ setup(
                 ],
     url="https://github.com/UberWagen/J3tracer",
     author="CalvinW",
-    authoremail="calvinwagner92@gmail.com",
+    author_email="calvinwagner92@gmail.com",
     license="MIT",
     install_requires=[
         "Adafruit-Blinka",
