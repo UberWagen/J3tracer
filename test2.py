@@ -44,7 +44,7 @@ def TeleOp():
 def canny(frame):
     gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
     blur = cv2.GaussianBlur(gray, (5,5), 0)
-    canny = cv2.Canny(blur, 40, 60)
+    canny = cv2.Canny(blur, 100, 150)
     return canny
     
 
@@ -68,7 +68,7 @@ def display_lines(frame, lines):
     if lines is not None:
         for line in lines:
             x1, y1, x2, y2 = line.reshape(4)
-            cv2.line(line_image, (x1, y1), (x2, y2), (255, 0, 0), 10)
+            cv2.line(line_image, (x1, y1), (x2, y2), (255, 0, 0), 15)
     return line_image    
 
 def cam(): 
@@ -80,10 +80,10 @@ def cam():
             frame = camera.read()
             canny_image = canny(frame)
             cropped_image = region_of_interest(canny_image)
-            lines = cv2.HoughLinesP(cropped_image, 2, np.pi/180, 100, np.array([]), minLineLength= 10, maxLineGap=10)
+            lines = cv2.HoughLinesP(cropped_image, 2, np.pi/180, 100, np.array([]), minLineLength= 125, maxLineGap=10)
             line_image = display_lines(frame, lines)
             combo_image = cv2.addWeighted(frame, 0.8, line_image, 1, 1)
-            cv2.imshow("results",combo_image)
+            cv2.imshow("results", cropped_image)
             # display the frame
             if cv2.waitKey(25) & 0xFF == ord('q'):
                 break
@@ -98,7 +98,9 @@ t1 = threading.Thread(target=cam)
 t2 = threading.Thread(target=TeleOp)
 
 if __name__ == '__main__':
+
     t1.start()
     t2.start()
     t1.join()
     t2.join()
+ 

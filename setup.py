@@ -1,3 +1,4 @@
+
 from setuptools import setup, find_packages
 
 
@@ -11,7 +12,6 @@ setup(
     version="0.0.1",
     description="Unhitched J3tracer platform",
     long_description=readme(),
-    long_description_content_type="text/markdown",
     classifiers=[
             "Development Status :: 5 - Prototype",
             "Programming Language :: Python :: 3",
@@ -26,6 +26,7 @@ setup(
         "adafruit-circuitpython-register",
         "adafruit-circuitpython-pca9685",
         "adafruit-circuitpython-motor",
+	"adafruit-circuitpython-framebuf",
         "adafruit-circuitpython-servokit",
         "adafruit-circuitpython-motorkit",
         "adafruit-circuitpython-motor",
@@ -35,7 +36,6 @@ setup(
         "nanocamera",
         "Pillow",
         "matplotlib",
-        "opencv-python"
     ],
     include_package_data=True,
     zip_safe=False)
