@@ -20,6 +20,9 @@ $ git clone https://github.com/UberWagen/J3tracer
 Install dependencies by running:<br>
 $ python3 setup.py install
 
+And install opencv-python. For some reason, it didn't like this in the install requirements in setup.py<br>
+$ pip3 install opencv-python<br>
+
 If you end up having issues with camera feeds or image processing, it's possible that your Linux config didn't come with a few packages. Run the following if you run into issues with image processing:<br>
 $ sudo apt-get install libcanberra-gtk-module<br>
 $ sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev libharfbuzz-dev libfribidi-dev
