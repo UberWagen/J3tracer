@@ -1,0 +1,16 @@
+Adafruit-Blinka
+Pillow
+adafruit-circuitpython-busdevice
+adafruit-circuitpython-framebuf
+adafruit-circuitpython-motor
+adafruit-circuitpython-motor
+adafruit-circuitpython-motorkit
+adafruit-circuitpython-pca9685
+adafruit-circuitpython-register
+adafruit-circuitpython-servokit
+adafruit-circuitpython-ssd1306
+inputs
+matplotlib
+nanocamera
+numpy
+opencv-contrib-python

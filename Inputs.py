@@ -503,10 +503,10 @@ KEYS_AND_BUTTONS = (
     (0x133, "BTN_NORTH"),
     (0x134, "BTN_WEST"),
     (0x135, "BTN_Z"),
-    (0x136, "BTN_TL"),
-    (0x137, "BTN_TR"),
-    (0x138, "BTN_TL2"),
-    (0x139, "BTN_TR2"),
+    (0x136, "BTN_TL"), #L1 or LB on controller
+    (0x137, "BTN_TR"), #R1 or RB on controller
+    (0x138, "BTN_TL2"), #L2 or LT on controller
+    (0x139, "BTN_TR2"), #R2 or RT on controller
     (0x13a, "BTN_SELECT"),
     (0x13b, "BTN_START"),
     (0x13c, "BTN_MODE"),

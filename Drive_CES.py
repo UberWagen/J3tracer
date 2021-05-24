@@ -6,6 +6,7 @@ import numpy
 import cv2
 import time
 import threading
+import multiprocessing
 
 throttle_gain = 0.8
 steering_offset = 0.25 #not used yet
@@ -24,16 +25,12 @@ def TeleOp():
                 steering.servo[0].angle= steeringvalue
                 print(steeringvalue)
 
-            if event.code  != 'BTN_TL2':
-                pass
-            else:
+            if event.code  == 'BTN_TL2':
                 fwdthrottlevalue = event.state * throttle_gain
                 motor.motor3.throttle = fwdthrottlevalue
                 print(fwdthrottlevalue)
             
-            if event.code != 'BTN_TR2':
-                pass
-            else:
+            if event.code == 'BTN_TR2':
                 revthrottlevalue = event.state * throttle_gain
                 motor.motor3.throttle = -revthrottlevalue
                 print(revthrottlevalue)      

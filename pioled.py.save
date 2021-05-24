@@ -22,14 +22,13 @@
 # Portions copyright (c) NVIDIA 2019
 # Portions copyright (c) JetsonHacks 2019
 
-
+import time
+import board
+import busio
 import Adafruit_SSD1306   # This is the driver chip for the Adafruit PiOLED
 from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
-import time
-import board
-import busio
 
 import subprocess
 
@@ -113,10 +112,10 @@ while True:
 
     # Print the IP address
     # Two examples here, wired and wireless
-    draw.text((x, top),       "eth0: " +
-              str(get_ip_address('eth0')),  font=font, fill=255)
-    """draw.text((x, top),     "wlan0: " +
-              str(get_ip_address('wlan0')), font=font, fill=255)"""
+    """draw.text((x, top),       "eth0: " +
+           
+    draw.text((x, top),     "wlan0: " + 
+              str(get_ip_address('wlan0')), font=font, fill=255)
 
     # Show the memory Usage
     draw.text((x, top+8), str(MemUsage.decode('utf-8')), font=font, fill=255)
@@ -124,8 +123,11 @@ while True:
     draw.text((x, top+16), str(Disk.decode('utf-8')), font=font, fill=255)
 
     draw.text((x, top+24), str('GET R3KT M8'), font=font, fill=255)
+
+    draw.text((x, top+32),   "eth0: " +
+             str(get_ip_address('eth0')), font=font, fill=255)
     # Display image.
-    # Set the SSD1306 image to the PIL image we have made, then display
+    # Set the SSD1306 image to the PIL image we have made, then dispaly
     disp.image(image)
     disp.display()
     # 1.0 = 1 second; The divisor is the desired updates (frames) per second

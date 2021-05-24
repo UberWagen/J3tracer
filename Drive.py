@@ -21,7 +21,7 @@ def TeleOp():
                 steering.servo[0].angle = steeringvalue
                 print(steeringvalue)
 
-            if event.code  != 'BTN_WEST':
+            if event.code  != 'BTN_TRIGGER':
                 pass
             else:
                 fwdthrottlevalue = event.state * throttle_gain

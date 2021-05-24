@@ -1,0 +1,8 @@
+README.md
+setup.py
+Autonomobile.egg-info/PKG-INFO
+Autonomobile.egg-info/SOURCES.txt
+Autonomobile.egg-info/dependency_links.txt
+Autonomobile.egg-info/not-zip-safe
+Autonomobile.egg-info/requires.txt
+Autonomobile.egg-info/top_level.txt
